@@ -18,8 +18,6 @@ const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&coun
 
 //check if all the images are loaded
 function imageLoaded(){
-    loadedImages.innerText = 'Images Loaded = '+imagesLoaded;
-    windowInnerHeight.innerText = 'Window Height = '+window.innerHeight;
     console.log(imagesLoaded);
     imagesLoaded++;
     if(imagesLoaded === totalImages){
@@ -74,6 +72,8 @@ async function getPhotos(){
     try {
         const response = await fetch(apiUrl);
         photosArray = await response.json();
+        loadedImages.innerText = 'Images Loaded = '+imagesLoaded;
+        windowInnerHeight.innerText = 'Window Height = '+window.window.scrollY;
         displayPhotos();
         console.log(photosArray);
     } catch (error) {

@@ -87,6 +87,7 @@ window.addEventListener('scroll', () => {
         getPhotos();
         console.log('load more');
     }
+    
 });
 
 //On Load
